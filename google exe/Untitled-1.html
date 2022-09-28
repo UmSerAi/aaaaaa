@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title>Jogo da Velha</title>
+</head>
+<style>
+    input[type="button"]
+    {
+        width: 50px;
+        height: 50px;
+        font-size: 35px;
+    }
+    input[type="button"].reiniciar
+    {
+        width: 100px;
+        height: 50px;
+        font-size: 20px;
+    }
+</style>
+<script language="javascript">
+    var vez = "X", vezes=0;
+    function chuu(IdBotao) {
+
+        document.getElementById(IdBotao).innerHTML = vez;
+        if (vez == "X")
+        {
+            vez = "O";
+        }
+        else
+        {
+            vez = "X";
+        }
+        vezes++;
+        if (vezes >=5)
+        {
+            venceu()
+        }
+    }
+    function venceu()
+    {
+        var aa;
+        if (document.getElementById('btn1').innerHTML == document.getElementById('btn2').innerHTML && document.getElementById('btn2').innerHTML == document.getElementById('btn3').innerHTML)
+        {
+            aa = document.getElementById('btn1').innerHTML
+            document.getElementById('btn10').innerHTML == aa;
+        }
+    }
+    
+</script>
+<body>
+    <table>
+        <tr>
+            <td id="btn1"><input type="button" name="btn1" onclick="chuu('btn1')"></td>
+            <td id="btn2"><input type="button" name="btn2" onclick="chuu('btn2')"></td>
+            <td id="btn3"><input type="button" name="btn3" onclick="chuu('btn3')"></td>
+        </tr>
+
+        <tr>
+            <td id="btn4"><input type="button" name="btn4" onclick="chuu('btn4')"></td>
+            <td id="btn5"><input type="button" name="btn5" onclick="chuu('btn5')"></td>
+            <td id="btn6"><input type="button" name="btn6" onclick="chuu('btn6')"></td>
+        </tr>
+
+        <tr>
+            <td id="btn7"><input type="button" name="btn7" onclick="chuu('btn7')"></td>
+            <td id="btn8"><input type="button" name="btn8" onclick="chuu('btn8')"></td>
+            <td id="btn9"><input type="button" name="btn9" onclick="chuu('btn9')"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="button" name="reiniciar" value="Reiniciar" class="reiniciar" onclick="window.location.reload()"></td>
+        </tr>
+        <tr>
+            <td id="btn10"><input type="button" name="btn9" onclick="chuu('btn9')"></td>
+        </tr>
+
+    </table>
+</body>
+<html>
