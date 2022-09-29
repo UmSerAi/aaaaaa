@@ -1,0 +1,111 @@
+<html>
+<head>
+    <title>Jogo da Velha</title>
+</head>
+<style>
+    input[type="button"]
+    {
+        width: 50px;
+        height: 50px;
+        font-size: 35px;
+    }
+    input[type="button"].reiniciar
+    {
+        width: 100px;
+        height: 50px;
+        font-size: 20px;
+    }
+</style>
+<script language="javascript">
+    var vez = "X", vezes=0, botoes=[1, 2, 3, 4, 5, 6, 7, 8, 9];
+    function chuu(IdBotao) {
+
+        document.getElementById(IdBotao).innerHTML = vez;
+        if (vez == "X")
+        {
+            vez = "O";
+        }
+        else
+        {
+            vez = "X";
+        }
+        
+        botoes[IdBotao] = document.getElementById(IdBotao).innerHTML
+        
+        //Linhas
+        if (botoes[1] == botoes[2] && botoes[2] == botoes[3])
+        {
+            document.getElementById('10').innerHTML = botoes[1] + " Ganhou!"
+        }
+
+        if (botoes[4] == botoes[5] && botoes[5] == botoes[6])
+        {
+            document.getElementById('10').innerHTML = botoes[4] + " Ganhou!"
+        }
+
+        if (botoes[7] == botoes[8] && botoes[8] == botoes[9])
+        {
+            document.getElementById('10').innerHTML = botoes[7] + " Ganhou!"
+        }
+
+        //Colunas
+        if (botoes[1] == botoes[4] && botoes[4] == botoes[7])
+        {
+            document.getElementById('10').innerHTML = botoes[1] + " Ganhou!"
+        }
+
+        if (botoes[2] == botoes[5] && botoes[5] == botoes[8])
+        {
+            document.getElementById('10').innerHTML = botoes[2] + " Ganhou!"
+        }
+
+        if (botoes[3] == botoes[6] && botoes[6] == botoes[9])
+        {
+            document.getElementById('10').innerHTML = botoes[3] + " Ganhou!"
+        }
+
+        //Diagonais
+        if (botoes[1] == botoes[5] && botoes[5] == botoes[9])
+        {
+            document.getElementById('10').innerHTML = botoes[1] + " Ganhou!"
+        }
+
+        if (botoes[3] == botoes[5] && botoes[5] == botoes[7])
+        {
+            document.getElementById('10').innerHTML = botoes[3] + " Ganhou!"
+        }
+        
+        
+    }
+    
+</script>
+<body>
+    <table>
+        <tr>
+            <td id="1"><input type="button" name="btn1" onclick="chuu(1)"></td>
+            <td id="2"><input type="button" name="btn2" onclick="chuu(2)"></td>
+            <td id="3"><input type="button" name="btn3" onclick="chuu(3)"></td>
+        </tr>
+
+        <tr>
+            <td id="4"><input type="button" name="btn4" onclick="chuu(4)"></td>
+            <td id="5"><input type="button" name="btn5" onclick="chuu(5)"></td>
+            <td id="6"><input type="button" name="btn6" onclick="chuu(6)"></td>
+        </tr>
+
+        <tr>
+            <td id="7"><input type="button" name="btn7" onclick="chuu(7)"></td>
+            <td id="8"><input type="button" name="btn8" onclick="chuu(8)"></td>
+            <td id="9"><input type="button" name="btn9" onclick="chuu(9)"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><input type="button" name="reiniciar" value="Reiniciar" class="reiniciar" onclick="window.location.reload()"></td>
+        </tr>
+
+        <tr>
+            <td id="10"></td>
+        </tr>
+    </table>
+</body>
+<html>
